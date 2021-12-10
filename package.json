@@ -1,0 +1,17 @@
+{
+  "name": "typescript-game",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "index.js",
+  "author": "Benmeziane melissa",
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "test": "jest --watch --verbose",
+    "verify": "jest --verbose"
+  }
+}
