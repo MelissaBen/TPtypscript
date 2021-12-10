@@ -11,7 +11,7 @@ export default class Archer extends Champions{
         this.score = score;
     }
 
-    // l'archer a la possibilité d'attaquer deux fois 
+    // l'archer a la possibilité d'attaquer deux fois de suite
 
     attack(adversaire: Champions, deuxCoup?: boolean) {
         if (adversaire.dead) {
