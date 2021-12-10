@@ -51,7 +51,6 @@ export default class Champions {
 
     canDead(value: number) {
         if (this.score <= value) {
-            console.log(value)
             return true;
         }
         return false;
