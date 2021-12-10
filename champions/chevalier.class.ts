@@ -2,19 +2,18 @@ import Champions from "./champions.class";
 
 export default class Chevalier extends Champions{
 
-    pointDeVie: number;
+    score: number;
     name: string;
 
-    constructor(pointDeVie: number, name: string) {
-        super(pointDeVie, name);
+    constructor(score: number, name: string) {
+        super(score, name);
         this.name = name;
-        this.pointDeVie = pointDeVie;
+        this.score = score;
     }
-
 
     encaisser() {
         if (!this.protection) {
-            this.pointDeVie -= this.degat
+            this.score -= this.demage
         }
     }
 

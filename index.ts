@@ -3,39 +3,32 @@ import Champions from "./champions/champions.class";
 import Chevalier from "./champions/chevalier.class";
 import Mage from "./champions/mage.class";
 
-let Abdoul = new Chevalier(100, 'Abdoul');
-let Melissa = new Mage(100, 'Melissa');
-let Takwa = new Archer(100, 'Takwa');
-let Pierre = new Mage(100, 'Pierre');
+let chevalier = new Chevalier(100, 'chevalier');
+let mage = new Mage(100, 'mage');
+let archer = new Archer(100, 'archer');
+let champions = new Champions(100, 'champions');
 
 
+chevalier.attack(mage);
+
+archer.protected();
+
+archer.attack(chevalier);
+archer.attack(mage, true);
+mage.soigner();
+archer.attack(mage, true);
+mage.soigner();
+archer.attack(mage, true);
+mage.soigner();
+archer.attack(mage, true);
+mage.soigner();
+archer.attack(mage, true);
+
+mage.soigner();
+mage.protected();
 
 
-// Abdoul.protege();
-
-Takwa.attaque(Abdoul);
-
-Pierre.protege();
-
-Takwa.attaque(Pierre);
-Takwa.attaque(Melissa, true);
-Melissa.soigner();
-Takwa.attaque(Melissa, true);
-Melissa.soigner();
-Takwa.attaque(Melissa, true);
-Melissa.soigner();
-Takwa.attaque(Melissa, true);
-Melissa.soigner();
-Takwa.attaque(Melissa, true);
-Takwa.attaque(Melissa, true);
-Takwa.attaque(Melissa, true);
-Takwa.attaque(Melissa, true);
-Takwa.attaque(Melissa, true);
-Melissa.soigner();
-Melissa.protege();
-
-
-Takwa.toString()
-Abdoul.toString()
-Pierre.toString()
-Melissa.toString()
+chevalier.getScore()
+mage.getScore()
+archer.getScore()
+champions.getScore()

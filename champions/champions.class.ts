@@ -1,64 +1,66 @@
 export default class Champions {
-
-    pointDeVie: number;
+    score: number;
     name: string;
     protection: boolean;
-    degat: number;
+    demage: number;
     dead: boolean;
 
-    constructor(pointDeVie: number, name: string) {
+    constructor(score: number, name: string) {
         this.protection = false;
-        this.degat = 10
+        this.demage = 10
         this.name = name;
-        this.pointDeVie = pointDeVie;
+        this.score = score;
         this.dead = false;
     }
 
-    attaque(victime: this) {
-        if (victime.dead) {
-            console.log(victime.name + ' est déjà mort(e) !')
+    attack(adversaire: this) {
+        if (adversaire.dead) {
+            console.log(adversaire.name + ' est déjà mort(e) !')
         } else {
-            console.log(this.name + ' attck ' + victime.name)
-            victime.encaisser();   
+            console.log(this.name + ' attack ' + adversaire.name)
+            adversaire.encaisser();   
         }
     }
 
     encaisser() {
         if (this.protection) {
-            this.encaisseOuMeurt(this.degat/2)
+            this.encaisseOuMeurt(this.demage/2)
         } else {
-            this.encaisseOuMeurt(this.degat)
+            this.encaisseOuMeurt(this.demage)
         }
     }
 
-    encaisseOuMeurt(degat: number) {
-        if (!this.canDead(degat)) {
-                this.pointDeVie -= degat
+    encaisseOuMeurt(demage: number) {
+        if (!this.canDead(demage)) {
+                this.score -= demage
         } else {
-            this.pointDeVie = 0;
+            this.score = 0;
             this.dead = true
             console.log(this.name, 'est mort(e)')
         }
     }
 
-    toString() {
-        console.log('Point de vie de ', this.name, 'est ', this.pointDeVie)
-    }
-
-    protege() {
+    protected() {
         if (this.dead) {
             console.log(this.name + ' est déjà mort(e) !')
         } else {
-            console.log(this.name, 'Se protege !')
+            console.log(this.name, 'Se protege!')
             this.protection = true;
         }
     }
 
     canDead(value: number) {
-        if (this.pointDeVie <= value ) {
+        if (this.score <= value) {
+            console.log(value)
             return true;
         }
         return false;
+    }
+
+    // le score des joueurs 
+
+    getScore() {
+        console.log('le score de ', this.name, 'est ', this.score)
     }
 
 }

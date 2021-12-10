@@ -2,22 +2,23 @@ import Champions from "./champions.class";
 
 export default class Mage extends Champions{
 
-    pointDeVie: number;
+    score: number;
     name: string;
 
-    constructor(pointDeVie: number, name: string) {
-        super(pointDeVie, name);
+    constructor(score: number, name: string) {
+        super(score, name);
         this.name = name;
-        this.pointDeVie = pointDeVie;
+        this.score = score;
     }
 
+    //Le mage peut se soigner sauf s'il est mort
 
     soigner() {
         if (this.dead) {
             console.log(this.name + ' est déjà mort(e) !')
         } else {
             console.log(this.name, 'Se soigne !')
-            this.pointDeVie += this.degat/2
+            this.score += this.demage/2
         }
     }
 

@@ -2,26 +2,28 @@ import Champions from "./champions.class";
 
 export default class Archer extends Champions{
 
-    pointDeVie: number;
+    score: number;
     name: string;
 
-    constructor(pointDeVie: number, name: string) {
-        super(pointDeVie, name);
+    constructor(score: number, name: string) {
+        super(score, name);
         this.name = name;
-        this.pointDeVie = pointDeVie;
+        this.score = score;
     }
 
-    attaque(victime: Champions, deux?: boolean) {
-        if (victime.dead) {
-            console.log(victime.name + ' est déjà mort(e) !')
+    // l'archer a la possibilité d'attaquer deux fois 
+
+    attack(adversaire: Champions, deuxCoup?: boolean) {
+        if (adversaire.dead) {
+            console.log(adversaire.name + ' est déjà mort(e) !')
         } else {
-            if (deux) {
-                console.log(this.name + ' attck 2 fois ' + victime.name)
-                victime.encaisser();
-                victime.encaisser();
+            if (deuxCoup) {
+                console.log(this.name + ' attaque 2 fois ' + adversaire.name)
+                adversaire.encaisser();
+                adversaire.encaisser();
             } else {
-                console.log(this.name + ' attck une  fois ' + victime.name)
-                victime.encaisser();   
+                console.log(this.name + ' attaque une  fois ' + adversaire.name)
+                adversaire.encaisser();   
             }
         }
         
