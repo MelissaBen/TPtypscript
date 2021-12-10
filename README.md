@@ -1,9 +1,9 @@
 TP typscript - final
 
-Melissa Benmeziane
-Takwa Belghith
-Abdoul Zakari
-Melien Roldy Pierre
+Melissa Benmeziane /
+Takwa Belghith /
+Abdoul Zakari /
+Melien Roldy Pierre /
 
 To use it follow these steps.
 
